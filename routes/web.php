@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,7 @@ Route::get('/', function () {
 Route::get('/cats/{id}/{name}', function($id, $name){
     return "我是第" . $id . "號的貓：" . $name;
 });
+
+// Laravel8 以前舊版本適用
+// Route::get('/about', 'WelcomeController@about');
+Route::get('/about', [WelcomeController::class, 'about']);
