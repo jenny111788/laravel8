@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/cats/{id}/{name}', function($id, $name){
+    return "我是第" . $id . "號的貓：" . $name;
+});
