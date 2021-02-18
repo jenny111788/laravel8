@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,5 @@ Route::get('/cats/{id}/{name}', function($id, $name){
 // Laravel8 以前舊版本適用
 // Route::get('/about', 'WelcomeController@about');
 Route::get('/about', [WelcomeController::class, 'about']);
+
+Route::resource('posts', PostsController::class)->only(['index', 'show']);
