@@ -12,4 +12,8 @@ class Book extends Model
     use SoftDeletes;
 
     protected $fillable = ['title', 'description', 'price', 'available'];
+
+    public function store() {
+        return $this->belongsTo('App\Models\Store');
+    }
 }
